@@ -1,0 +1,7 @@
+transformers
+requests
+beautifulsoup4
+torch
+requests
+streamlit
+

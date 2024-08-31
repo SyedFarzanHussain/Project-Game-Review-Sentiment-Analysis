@@ -50,14 +50,13 @@ if st.button("Analyze Sentiment"):
         tokens = tokenizer.encode(review[:512], return_tensors='pt')
         result = model(tokens)
         sentiment = int(torch.argmax(result.logits)) + 1
-        st.write(sentiment)
+    
         
         # Display the sentiment result
-        #if sentiment == 1 or sentiment == 2:
-            #st.write("Sentiment: Negative")
-        #elif sentiment == 3:
-            #st.write("Sentiment: Neutral")
-        #else:
-            #st.write("Sentiment: Positive")
+        if sentiment == 1:
+            st.write("Sentiment: Negative")
+        else:
+            st.write("Sentiment: Positive")
+            
     else:
         st.write("Please write a review to analyze.")

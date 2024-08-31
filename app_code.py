@@ -22,8 +22,8 @@ def get_game_header_image(app_id):
     return "NA"  # Return "NA" if header image URL not found
 
 # Load the sentiment analysis model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
-model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased")
+tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased-finetuned-sst-2-english')
+model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
 
 # Streamlit app
 st.title("Game Review Sentiment Analyzer")

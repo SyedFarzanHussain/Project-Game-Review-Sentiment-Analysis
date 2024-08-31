@@ -47,7 +47,7 @@ review = st.text_area("Write your review here:")
 # Sentiment analysis
 if st.button("Analyze Sentiment"):
     if review:
-        tokens = tokenizer.encode(review, return_tensors='pt')
+        tokens = tokenizer.encode(review[:512], return_tensors='pt')
         result = model(tokens)
         sentiment = int(torch.argmax(result.logits)) + 1
         
